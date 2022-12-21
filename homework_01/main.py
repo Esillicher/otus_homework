@@ -22,7 +22,7 @@ PRIME = "prime"
 
 def is_prime(number):
     divisor = 2
-    while number % divisor != 0:
+    while number % divisor != 0 and divisor <= number:
         divisor += 1
     return divisor == number
 
