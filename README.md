@@ -1,2 +1,4 @@
 # otus_homework
-Repository with homeworks
+Repository with homeworks for python basic
+
+Student: Cherygova Elizaveta
