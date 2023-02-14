@@ -1,5 +1,6 @@
 from abc import ABC
 import exceptions
+# import pytest
 
 
 class Vehicle(ABC):
@@ -42,20 +43,27 @@ class Vehicle(ABC):
         return self.fuel
 
 
-# scoopy = Vehicle()
+
+# print(scoopy.start())
 # scoopy.started = True
 # print(scoopy)
 # print(scoopy.start())
 # # #print(scoopy.move(0.1))
-# # scoopy.fuel = 5
 # # print(scoopy)
 # # print(scoopy.move(1))
-#
 # assert scoopy.started is False
 # scoopy.fuel = 0
-with raises(LowFuelError):
-    scoopy.start()
-assert scoopy.started is False
-print(LowFuelError.mro())
+
+# scoopy = Vehicle()
+# scoopy.fuel = 0
+# with pytest.raises(exceptions.LowFuelError):
+#     scoopy.start()
+#
+# scoopy.fuel = 0.1
+# with pytest.raises(exceptions.NotEnoughFuel):
+#     scoopy.move(1)
+
+# assert scoopy.started is False
+# print(LowFuelError.mro())
 
 
