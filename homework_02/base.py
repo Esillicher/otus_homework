@@ -22,6 +22,7 @@ class Vehicle(ABC):
             print('engine already started')
         else:
             if self.fuel == 0:
+                self.started = False
                 raise exceptions.LowFuelError(f"not enough fuel for start")
             else:
                 print('successfully started')
@@ -30,11 +31,11 @@ class Vehicle(ABC):
         return self.started
 
     def move(self, distance: float):
-        needed_fuel = self.fuel_consumption * distance / 100
+        needed_fuel = self.fuel_consumption * distance
 
         if needed_fuel < self.fuel:
             print("let's go!")
-            self.fuel = self.fuel - needed_fuel
+            self.fuel -= needed_fuel
         else:
             raise exceptions.NotEnoughFuel(f"not enough fuel for journey")
 
