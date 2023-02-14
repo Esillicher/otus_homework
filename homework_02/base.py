@@ -41,13 +41,13 @@ class Vehicle(ABC):
         return self.fuel
 
 
-scoopy = Vehicle()
-scoopy.started = True
-print(scoopy)
-print(scoopy.start())
-#print(scoopy.move(0.1))
-scoopy.fuel = 5
-print(scoopy)
-print(scoopy.move(1))
+# scoopy = Vehicle()
+# scoopy.started = True
+# print(scoopy)
+# print(scoopy.start())
+# #print(scoopy.move(0.1))
+# scoopy.fuel = 5
+# print(scoopy)
+# print(scoopy.move(1))
 
 
