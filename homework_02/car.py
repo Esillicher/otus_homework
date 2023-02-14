@@ -3,25 +3,26 @@
 """
 
 import base
-import engine as engine_module
+from engine import Engine
 
 
 class Car(base.Vehicle):
-    engine: int
-    # engine: engine_module.Engine = None
+    def __init__(self, engine: Engine, *args, **kwargs):
+        self.engine = engine
+        super().__init__(*args, **kwargs)
 
-    def set_engine(self, eng: engine_module.Engine):
+    def set_engine(self, eng: Engine):
         self.engine = eng
         return self.engine
 
 
-# car = Car()
-# print(car)
-# eng1 = engine_module.Engine(1, 2)
+# car = Car(1)
+# print(car.engine)
+# eng1 = Engine(1, 2)
 # print(eng1)
 # # car.engine = eng1
 # # print(car.engine)
-# print(car.set_engine(engine_module.Engine))
+# print(car.set_engine(eng1))
 # print(car.engine)
 
 
