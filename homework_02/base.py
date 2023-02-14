@@ -18,7 +18,7 @@ class Vehicle(ABC):
         return str(self)
 
     def start(self) -> bool:
-        if self.started:
+        if self.started and self.fuel > 0:
             print('engine already started')
         else:
             if self.fuel == 0:
@@ -46,9 +46,16 @@ class Vehicle(ABC):
 # scoopy.started = True
 # print(scoopy)
 # print(scoopy.start())
-# #print(scoopy.move(0.1))
-# scoopy.fuel = 5
-# print(scoopy)
-# print(scoopy.move(1))
+# # #print(scoopy.move(0.1))
+# # scoopy.fuel = 5
+# # print(scoopy)
+# # print(scoopy.move(1))
+#
+# assert scoopy.started is False
+# scoopy.fuel = 0
+with raises(LowFuelError):
+    scoopy.start()
+assert scoopy.started is False
+print(LowFuelError.mro())
 
 
