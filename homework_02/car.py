@@ -2,11 +2,11 @@
 создайте класс `Car`, наследник `Vehicle`
 """
 
-import base
-from engine import Engine
+from homework_02.base import Vehicle
+from homework_02.engine import Engine
 
 
-class Car(base.Vehicle):
+class Car(Vehicle):
     def __init__(self, engine: Engine | None = None, *args, **kwargs):
         self.engine = engine
         super().__init__(*args, **kwargs)
