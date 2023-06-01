@@ -1,5 +1,5 @@
 from abc import ABC
-import exceptions
+from homework_02 import exceptions
 # import pytest
 
 
@@ -31,14 +31,14 @@ class Vehicle(ABC):
 
         return self.started
 
-    def move(self, distance: float):
+    def move(self, distance: int):
         needed_fuel = self.fuel_consumption * distance
 
-        if needed_fuel < self.fuel:
+        if self.fuel < needed_fuel:
+            raise exceptions.NotEnoughFuel(f"not enough fuel for journey")
+        else:
             print("let's go!")
             self.fuel -= needed_fuel
-        else:
-            raise exceptions.NotEnoughFuel(f"not enough fuel for journey")
 
         return self.fuel
 
